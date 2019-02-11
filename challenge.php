@@ -1,30 +1,33 @@
-<?php 
+<?php
 // 1. define a class for a car
 
-class Car {
+class Car
+{
 
 // 2. Properties: brand, model, year, description, weight_kg
-    var $brand;
-    var $model;
-    var $year;
-    var $description;
-    var $weight_kg;
-    var $lbs = 2.20462;
+    public $brand;
+    public $model;
+    public $year;
+    public $description;
+    public $weight_kg;
+    public $lbs = 2.20462;
 
 // 3. Methods: name, weight_lbs, set_weight_lbs
 
-function name() {
-return $this->brand . " " . $this->model . " " . $this->year . " " . $this->description . " " . $this->weight_kg;
-}
+    public function name()
+    {
+        return $this->brand . " " . $this->model . " " . $this->year . " " . $this->description . " " . $this->weight_kg;
+    }
 
-function weight_lbs() {
-return $this->weight_kg;
-}
+    public function weight_lbs()
+    {
+        return $this->weight_kg;
+    }
 
-function set_weight_lbs() {
-return $this->weight_kg * $this->lbs . " lbs";
-}
-
+    public function set_weight_lbs()
+    {
+        return $this->weight_kg * $this->lbs . " lbs";
+    }
 }
 
 $car1 = new Car;
@@ -50,7 +53,4 @@ echo "<h1>Car's weight in kg </h1>" . $car2->weight_lbs() . "<br/>";
 echo "<h1>Weight in lbs</h1>" . $car2->set_weight_lbs() . "<br/>";
 
 $class_methods = get_class_methods("Car");
-echo "<hr/> Class methods:" . implode(", " ,$class_methods) . "<br/>";
-
-
-?>
+echo "<hr/> Class methods:" . implode(", ", $class_methods) . "<br/>";
